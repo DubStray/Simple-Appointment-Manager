@@ -17,6 +17,7 @@ public class User extends BaseEntity {
 
     /**
      * Username for the entity
+     * 
      * @nullable = false
      * @lenght = max length is 255
      */

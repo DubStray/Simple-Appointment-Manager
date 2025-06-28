@@ -22,6 +22,7 @@ public class UserServiceImpl implements UserService {
 
     /**
      * Injecting dependencies via constructor
+     * 
      * @param userRepo
      * @param mapper
      */
@@ -33,6 +34,7 @@ public class UserServiceImpl implements UserService {
     /**
      * Method for CRUD <br/>
      * Finds all users
+     * 
      * @return list of users
      */
     @Override
@@ -42,6 +44,7 @@ public class UserServiceImpl implements UserService {
 
     /**
      * Finds a user by his ID.
+     * 
      * @param id
      * @return User
      */
@@ -52,6 +55,7 @@ public class UserServiceImpl implements UserService {
 
     /**
      * Finds a user by his EMAIL
+     * 
      * @param email
      * @return User
      */
@@ -62,6 +66,7 @@ public class UserServiceImpl implements UserService {
 
     /**
      * Create a User and check if it's not duplicated
+     * 
      * @param userData
      * @return UserDTO
      */
@@ -77,6 +82,7 @@ public class UserServiceImpl implements UserService {
 
     /**
      * Update an existing user
+     * 
      * @param id
      * @param userRequestDTO
      * @return UserDTO
@@ -85,11 +91,15 @@ public class UserServiceImpl implements UserService {
     public UserDTO updateUser(Long id, UserRequestDTO userRequestDTO) {
         User checkUser = userRepo.findById(id).orElseThrow(() -> new UserNotFoundException(id));
 
+        checkUser.setEmail(userRequestDTO.getEmail());
+        checkUser.setUsername(userRequestDTO.getUsername());
+
         return mapper.toUserDTO(userRepo.save(checkUser));
     }
 
     /**
      * Delete a User by his id
+     * 
      * @param id
      */
     @Override

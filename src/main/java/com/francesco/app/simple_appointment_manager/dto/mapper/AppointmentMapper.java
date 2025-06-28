@@ -4,14 +4,14 @@ import com.francesco.app.simple_appointment_manager.dto.AppointmentDTO;
 import com.francesco.app.simple_appointment_manager.dto.AppointmentRequestDTO;
 import com.francesco.app.simple_appointment_manager.entity.Appointment;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = { UserMapper.class })
 public interface AppointmentMapper {
 
-    AppointmentRequestDTO toCreateAppointmentDTO(Appointment appointment);
-
+    @Mapping(source = "user", target = "userInfo")
     AppointmentDTO toAppointmentDTO(Appointment appointment);
 
     Appointment toCreateAppointmentEntity(AppointmentRequestDTO appointment);

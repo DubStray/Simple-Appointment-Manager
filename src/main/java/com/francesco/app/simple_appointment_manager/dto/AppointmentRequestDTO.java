@@ -12,5 +12,5 @@ public class AppointmentRequestDTO {
     private LocalDateTime dateTime;
 
     @NotBlank
-    private UserDTO userInfo;
+    private Long userId;
 }
