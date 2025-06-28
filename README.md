@@ -5,7 +5,7 @@
 **Simple Appointment Manager** is a basic backend REST API built with Java Spring Boot.  
 It demonstrates the ability to work with modern backend technologies, following best practices in software development.
 
-### 🔧 Technologies Used
+### Technologies Used
 - **Spring Boot**
 - **Spring Data JPA**
 - **MapStruct** – for clean DTO mapping
