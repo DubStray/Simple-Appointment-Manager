@@ -3,9 +3,7 @@ package com.francesco.app.simple_appointment_manager.dto;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-import lombok.Data;
 
-@Data
 public class UserRequestDTO {
 
     /**
@@ -26,4 +24,24 @@ public class UserRequestDTO {
     @Email(message = "Email not valid.")
     @Size(max = 255, message = "Max length allowed: 255")
     private String email;
+
+    public String getUsername()
+    {
+        return username;
+    }
+
+    public void setUsername(String username)
+    {
+        this.username = username;
+    }
+
+    public String getEmail()
+    {
+        return email;
+    }
+
+    public void setEmail(String email)
+    {
+        this.email = email;
+    }
 }

@@ -4,7 +4,6 @@ import com.francesco.app.simple_appointment_manager.dto.UserDTO;
 import com.francesco.app.simple_appointment_manager.dto.UserRequestDTO;
 import com.francesco.app.simple_appointment_manager.entity.User;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 
 import java.util.List;
 

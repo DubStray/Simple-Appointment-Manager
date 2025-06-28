@@ -6,7 +6,9 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-@EqualsAndHashCode(callSuper = false)
+import java.util.List;
+
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @Data
 @NoArgsConstructor
@@ -27,4 +29,10 @@ public class User extends BaseEntity {
      */
     @Column(nullable = false, unique = true)
     private String email;
+
+    /**
+     * List of appointment of the User mapped
+     */
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Appointment> appointments;
 }
